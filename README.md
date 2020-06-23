@@ -21,5 +21,3 @@ This project is also an exercise in implementing RAII from scratch for objects a
 5. `ip=$(ifconfig en0 | grep inet | awk '$1=="inet" {print $2}')`
 6. `xhost + $ip`
 4. `docker run -it --rm --name membot -e DISPLAY=$ip:0 -v /tmp/.X11-unix:/tmp/.X11-unix membot:latest`
-
-![gif](./images/example-build-mac.gif)
