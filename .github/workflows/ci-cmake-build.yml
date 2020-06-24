@@ -21,7 +21,7 @@ jobs:
       # - name: Clone repo
       #   run: git clone https://github.com/mharrisb1/memory-management-chatbot.git
       - name: Create build directory
-        run: mkdir build && cd build && cmake .. && make
+        run: ls && mkdir build && cd build && cmake .. && make
       # - name: Build with CMake and Make
       #   run: cmake .. && make
 
