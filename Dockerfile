@@ -13,7 +13,7 @@ RUN apt-get remove cmake
 RUN pip3 install cmake --upgrade
 
 # GUI dependencies
-RUN apt-get install -y cmake build-essential && \
+RUN apt-get install -y build-essential && \
     apt-get install -y libwxgtk3.0-dev libwxgtk3.0-0v5
 
 # git
