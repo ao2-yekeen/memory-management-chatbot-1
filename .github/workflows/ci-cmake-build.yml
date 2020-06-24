@@ -5,8 +5,23 @@ on:
     branches: [ master ]
   pull_request:
     branches: [ master ]
+
 jobs:
-  build:
-    runs:
-    using: 'docker'
-    image: 'Dockerfile'
+  cmake:
+    runs-on: ubuntu-18.04
+    steps:
+      - name: Install general dependencies
+        run: sudo apt-get install -y apt-transport-https ca-certificates gnupg software-properties-common wget python3-pip git
+      - name: Remove CMake
+        run: sudo apt-get remove cmake
+      - name: Install new version of CMake via Pip3
+        run: pip3 install cmake --upgrade
+      - name: Install GUI dependencies
+        run: sudo apt-get install -y cmake build-essential libwxgtk3.0-dev libwxgtk3.0-0v5
+      - name: Clone repo
+        run: git clone https://github.com/mharrisb1/memory-management-chatbot.git
+      - name: Create build directory
+        run: cd memory-management-chatbot/ && mkdir build && cd build
+      - name: Build with CMake and Make
+        run: cmake .. && make
+
