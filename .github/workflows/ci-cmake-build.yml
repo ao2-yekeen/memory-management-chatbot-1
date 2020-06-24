@@ -1,5 +1,5 @@
 name: CMake Build
-description: 'CI for merges with or pushes to master'
+
 on:
   push:
     branches: [ master ]
