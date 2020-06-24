@@ -19,8 +19,8 @@ RUN apt-get install -y build-essential && \
 # git
 RUN apt-get install -y git
 
-# clone repo
-RUN git clone https://github.com/mharrisb1/memory-management-chatbot.git
+# clone develop repo
+RUN git clone --single-branch --branch develop https://github.com/mharrisb1/memory-management-chatbot.git
 
 # workdir to be inside of the cloned repo
 WORKDIR /memory-management-chatbot
