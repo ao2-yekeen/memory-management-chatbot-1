@@ -1,4 +1,4 @@
-name: CMake Build
+name: CMake Build - Master
 
 on:
   push:
