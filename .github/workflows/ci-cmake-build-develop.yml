@@ -1,4 +1,4 @@
-name: CMake Build - Develop
+name: Ubuntu-18.04 - Develop
 
 on:
   push:
