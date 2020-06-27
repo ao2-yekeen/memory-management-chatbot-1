@@ -31,5 +31,6 @@ WORKDIR /memory-management-chatbot/build
 RUN cmake ..
 RUN make
 
+
 # run binary on startup
 ENTRYPOINT [ "./membot" ]
