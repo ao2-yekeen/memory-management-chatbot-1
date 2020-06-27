@@ -6,7 +6,7 @@ RUN apt-get update && apt-get upgrade -y
 # general dependencies
 RUN apt-get install -y apt-transport-https ca-certificates gnupg \
     software-properties-common wget
-RUN apt-get install -y python3-pip
+RUN apt-get update && apt-get install -y python3-pip
 
 # upgrade CMake
 RUN apt-get remove cmake
