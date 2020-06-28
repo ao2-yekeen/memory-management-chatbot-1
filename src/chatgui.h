@@ -27,7 +27,7 @@ public:
     ~ChatBotPanelDialog();
 
     // getter / setter
-    std::unique_ptr<ChatLogic> GetChatLogicHandle() { return _chatLogic; }
+    ChatLogic &GetChatLogicHandle() { return *_chatLogic; }
 
     // events
     void paintEvent(wxPaintEvent &evt);
