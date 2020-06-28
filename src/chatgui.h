@@ -29,7 +29,7 @@ public:
 
 
     // getter / setter
-    ChatLogic &GetChatLogicHandle() const { return *_chatLogic.get(); }
+    ChatLogic &GetChatLogicHandle() const { return *_chatLogic; }
 
     // events
     void paintEvent(wxPaintEvent &evt);
