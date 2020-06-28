@@ -1,4 +1,4 @@
-name: Ubuntu-18.04 - Develop
+name: Ubuntu-18.04
 
 on:
   push:
@@ -10,9 +10,7 @@ jobs:
   cmake:
     runs-on: ubuntu-18.04
     steps:
-      - uses: actions/checkout@v2
-        with:
-          ref: develop
+      - uses: actions/checkout@v1
       - name: Install general dependencies
         run: sudo apt-get install -y apt-transport-https ca-certificates gnupg software-properties-common wget python3-pip git
       - name: Remove CMake
@@ -24,5 +22,5 @@ jobs:
       - name: configure
         run: mkdir build && cd build && cmake -DCMAKE_CXX_FLAGS="-Werror" ..
       - name: build
-        run: cmake --build build
+        run: cmake -DCMAKE_BUILD_TYPE=Debug --build build
 
