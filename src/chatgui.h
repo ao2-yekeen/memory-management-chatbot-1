@@ -27,7 +27,7 @@ public:
     ~ChatBotPanelDialog();
 
     // getter / setter
-    ChatLogic *GetChatLogicHandle() { return _chatLogic.get(); }
+    ChatLogic &GetChatLogicHandle() { return *_chatLogic; }
 
     // events
     void paintEvent(wxPaintEvent &evt);
@@ -60,6 +60,7 @@ class ChatBotFrame : public wxFrame
 private:
     // control elements
     ChatBotPanelDialog *_panelDialog;
+
     wxTextCtrl *_userTextCtrl;
 
     // events
