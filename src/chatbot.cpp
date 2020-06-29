@@ -35,7 +35,7 @@ ChatBot::~ChatBot()
     std::cout << "ChatBot Destructor" << std::endl;
 
     // deallocate heap memory
-    if(_image != nullptr) // Attention: wxWidgets used NULL and not nullptr
+    if(_image != nullptr)
     {
         delete _image;
         _image = nullptr;
@@ -44,7 +44,19 @@ ChatBot::~ChatBot()
 
 //// STUDENT CODE
 ////
+// Copy constructor (deep copy)
+ChatBot::ChatBot(const ChatBot &source) {
 
+    // not owned
+    this->_rootNode = source._rootNode;
+    this->_chatLogic = source._chatLogic;
+    this->_chatLogic->SetChatbotHandle(this);  // not sure why this should be here
+
+    // owned
+    this->_image = new wxBitmap();
+    this->_image = *source._image;
+    std::cout << "ChatBot Copy Constructor" << std::endl;
+}
 ////
 //// EOF STUDENT CODE
 
