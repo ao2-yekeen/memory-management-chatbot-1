@@ -26,7 +26,10 @@ RUN git clone --single-branch --branch develop https://github.com/mharrisb1/memo
 WORKDIR /memory-management-chatbot
 
 # build steps
-RUN make build
+RUN mkdir build
+WORKDIR /memory-management-chatbot/build
+RUN cmake ..
+RUN make
 
 
 # run binary on startup
