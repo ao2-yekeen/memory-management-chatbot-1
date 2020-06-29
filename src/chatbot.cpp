@@ -54,7 +54,7 @@ ChatBot::ChatBot(const ChatBot &source) {
 
     // owned
     this->_image = new wxBitmap();
-    this->_image = *source._image;
+    *_image = *source._image;
     std::cout << "ChatBot Copy Constructor" << std::endl;
 }
 ////

@@ -20,6 +20,7 @@ RUN apt-get install -y build-essential && \
 RUN apt-get install -y git
 
 # clone develop repo
+RUN echo "Cloning develop branch"
 RUN git clone --single-branch --branch develop https://github.com/mharrisb1/memory-management-chatbot.git
 
 # workdir to be inside of the cloned repo
