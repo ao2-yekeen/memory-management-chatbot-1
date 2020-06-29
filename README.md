@@ -8,9 +8,9 @@ This project is also an exercise in implementing RAII from scratch for objects a
 
 # Build
 
-## MacOS
+## 1. MacOS and Docker
 
-### Dependencies for Running Locally
+### Dependencies
 * [Docker](https://docs.docker.com/get-docker/) for Mac
 * [xQuartz 2.7.10](https://www.xquartz.org/releases/XQuartz-2.7.10.html) for Mac (>=2.7.11 does not work with Docker)
 
@@ -18,3 +18,16 @@ This project is also an exercise in implementing RAII from scratch for objects a
 
 1. Clone this repo and `cd`  in to it.
 2. Build with Docker (only MacOS tested): `make docker-build`
+
+## 2. MacOS
+
+### Dependencies
+* Install `wxWidgets` with:
+```$xslt
+brew install wxwidgets
+```
+
+### Basic Build Instructions
+1. Clone this repo and `cd`  in to it.
+2. `make build`
+3. Optional: clean up build with `make clean` 

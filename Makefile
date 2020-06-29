@@ -5,3 +5,13 @@ docker-build:
 		ip=$$(ifconfig en0 | grep inet | awk '$$1=="inet" {print $$2}') && \
 		xhost + $$ip && \
 		docker run -it --rm --name membot -e DISPLAY=$$ip:0 -v /tmp/.X11-unix:/tmp/.X11-unix membot:latest
+
+.PHONY: build
+build:
+	mkdir build && cd build && \
+	cmake .. && \
+	cmake --build .
+
+.PHONY: clean
+clean:
+	rm -rf build
