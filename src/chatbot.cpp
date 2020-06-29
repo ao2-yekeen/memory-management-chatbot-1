@@ -15,7 +15,6 @@ ChatBot::ChatBot()
     _image = nullptr;
     _chatLogic = nullptr;
     _rootNode = nullptr;
-    std::cout << "ChatBot Constructor" << std::endl;
 }
 
 // constructor WITH memory allocation
@@ -26,7 +25,6 @@ ChatBot::ChatBot(std::string filename)
     // invalidate data handles
     _chatLogic = nullptr;
     _rootNode = nullptr;
-    std::cout << "ChatBot Constructor" << std::endl;
 
     // load image into heap memory
     _image = new wxBitmap(filename, wxBITMAP_TYPE_PNG);
