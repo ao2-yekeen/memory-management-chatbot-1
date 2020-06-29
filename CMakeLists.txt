@@ -18,9 +18,14 @@ if(CMAKE_SYSTEM_NAME STREQUAL "Linux")
     target_include_directories(membot PRIVATE ${wxWidgets_INCLUDE_DIRS})
 elseif(CMAKE_SYSTEM_NAME STREQUAL "Darwin")
     message(STATUS "Configuring on/for macOS")
+    find_package(wxWidgets REQUIRED COMPONENTS core base)
+    include(${wxWidgets_USE_FILE})
+
     file(GLOB project_SRCS src/*.cpp)
 
     add_executable(membot ${project_SRCS})
+
+    target_link_libraries(membot ${wxWidgets_LIBRARIES})
 endif()
 
 
