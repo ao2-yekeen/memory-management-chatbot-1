@@ -1,4 +1,3 @@
-#include <iostream>
 #include <random>
 #include <algorithm>
 #include <ctime>
@@ -44,19 +43,35 @@ ChatBot::~ChatBot()
 
 //// STUDENT CODE
 ////
-// Copy constructor (deep copy)
+// Copy constructor
 ChatBot::ChatBot(const ChatBot &source) {
 
     // not owned
     this->_rootNode = source._rootNode;
     this->_chatLogic = source._chatLogic;
-    this->_chatLogic->SetChatbotHandle(this);  // not sure why this should be here
+    this->_currentNode = source._currentNode;
 
     // owned
     this->_image = new wxBitmap();
     *_image = *source._image;
+    this->_chatLogic->SetChatbotHandle(this);
     std::cout << "ChatBot Copy Constructor" << std::endl;
 }
+
+// Move constructor
+ChatBot::ChatBot(ChatBot &&source) {
+
+    // not owned
+    this->_rootNode = source._rootNode;
+    this->_chatLogic = source._chatLogic;
+    this->_currentNode = source._currentNode;
+
+    // owned
+    this->_image = source._image;
+    source._image = nullptr;
+    std::cout << "ChatBot Move Constructor" << std::endl;
+}
+
 ////
 //// EOF STUDENT CODE
 

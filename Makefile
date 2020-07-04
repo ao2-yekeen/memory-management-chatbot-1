@@ -10,7 +10,8 @@ docker-build:
 build:
 	mkdir build && cd build && \
 	cmake .. && \
-	cmake --build .
+	make && \
+	./membot
 
 .PHONY: clean
 clean:
