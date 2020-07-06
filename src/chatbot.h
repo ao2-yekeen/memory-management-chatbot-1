@@ -28,47 +28,17 @@ public:
     ChatBot(std::string filename); // constructor WITH memory allocation
     ~ChatBot();
 
-    //// STUDENT CODE
-    ////
-
     // copy constructor
     ChatBot(const ChatBot &source);
 
     // move constructor
     ChatBot(ChatBot &&source);
 
-    // copy assignment constructor
-    ChatBot &operator=(const ChatBot &source) {
-        std::cout << "ChatBot copy assignment operator" << std::endl;
-        if (this == &source) {
-            return *this;
-        }
-        _rootNode = source._rootNode;
-        _chatLogic = source._chatLogic;
-        _currentNode = source._currentNode;
-        delete[] _image;
-        _image = new wxBitmap();
-        *_image = *source._image;
-        return *this;
-    }
+    // copy assignment operator
+    ChatBot &operator=(const ChatBot &source);
 
-    // move assignment constructor
-    ChatBot &operator=(ChatBot &&source) {
-        std::cout << "ChatBot move assignment operator" << std::endl;
-        if (this == &source) {
-            return *this;
-        }
-        _rootNode = source._rootNode;
-        _chatLogic = source._chatLogic;
-        _currentNode = source._currentNode;
-        delete[] _image;
-        _image = source._image;
-        source._image = nullptr;
-        return *this;
-    }
-
-    ////
-    //// EOF STUDENT CODE
+    // move assignment operator
+    ChatBot &operator=(ChatBot &&source);
 
     // getters / setters
     void SetCurrentNode(GraphNode *node);
