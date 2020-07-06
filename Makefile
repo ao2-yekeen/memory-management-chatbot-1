@@ -8,6 +8,7 @@ docker-build:
 
 .PHONY: build
 build:
+	make clean
 	mkdir build && cd build && \
 	cmake .. && \
 	make && \
